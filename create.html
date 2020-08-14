@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <style type="text/css">
+        .wrapper{
+            width: 650px;
+            margin: 0 auto;
+        }
+        .page-header h2{
+            margin-top: 0;
+        }
+        table tr td:last-child a{
+            margin-right: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="container-fluid">
+             <div class="row justify-content-center">
+               <form action="process.php" method="POST">
+                     <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                    <div class="form-group">
+                        <label for="product_name">Product Name</label>
+                        <input type="text" name="product_name" class="form-control" value="" placeholder="Enter your Product name">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_type">Product Type</label>
+                        <select name="product_type" class="form-control" value="" placeholder="Enter your Product Type">
+                            <option value="">--Select--</option>
+                            <option value="short">Short</option>
+                            <option value="long">Long</option>
+                        </select>
+                    </div>                            
+                    <div class="form-group">
+                        <label for="product_image">Image</label>
+                         <input type="file" name="product_image" class="form-control-file" value="" placeholder="Enter your Product Image">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="status" value="1">
+                            <label for="active" class="form-check-label">IN</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="status" value="0">
+                            <label for="active" class="form-check-label">Out</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adress">Adress</label>
+                        <textarea name="adress" class="form-control" value="" placeholder="Enter your Adress"></textarea>
+                    </div>
+                    <div class="form-group">                                                                 
+                        <button type="submit" class="btn btn-primary" name="save">Save</button>
+                        
+                    </div>
+               </form>
+            </div>
+       </div>
+    </div>
+</body>
+</html>
