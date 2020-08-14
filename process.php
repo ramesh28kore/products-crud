@@ -32,7 +32,7 @@ if (isset($_POST['save'])) {
 
 //DELETE
 if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
+    $product_id = $_GET['delete'];
     $mysqli->query("DELETE FROM products WHERE product_id=$product_id") or die ($mysqli->error());
 
     $_SESSION['message'] = "Record has been Deleted!";
